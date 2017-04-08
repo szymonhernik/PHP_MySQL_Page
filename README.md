@@ -19,7 +19,7 @@ The site includes a <b>part deticated directly to the Public and Admins</b>. I a
 
 
 ## Instruction
-To set up environment you need to have:
+To set up an environment you need to have:
 <ul>
 <li>installed PHP and MySQL on your computer</li>
 <li>on Windows you need to have web server/ on Mac you need to have Apache</li>
