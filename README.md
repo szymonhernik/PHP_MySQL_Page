@@ -17,3 +17,17 @@ The site includes a <b>part deticated directly to the Public and Admins</b>. I a
 <li>Adding user authentication</li>
 <li>Encrypting and salting passwords using Blowfish</li>
 
+
+## Instruction
+To set up environment you need to have:
+<ul>
+<li>installed PHP and MySQL on your computer</li>
+<li>on Windows you need to have web server/ on Mac you need to have Apache</li>
+<li>run in your terminal/cmd " mysql -u widget_cms -p widget_corp " and type password: "secretpassword"</li>
+<li>run project in your browser by: 
+<ul>
+<li>going to widget_corp/public/login.php to set Admin area and type data mencioned above or</li>
+<li>going to widget_corp/public/index.php to set Public area </li>
+</ul>
+</li>
+</ul>
