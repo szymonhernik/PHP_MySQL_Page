@@ -1,0 +1,53 @@
+<p>Welcome to the admin area.</p>
+<ul>
+  <li><a href="manage_content.php">Manage Website Content</a></li>
+  <li><a href="manage_admins.php">Manage Admin Users</a></li>
+  <li><a href="logout.php">Logout</a></li>
+</ul>
+
+
+navigation
+
+<ul class="subjects">
+  <?php $subject_set = find_all_subjects();	?>
+  <?php
+    // 3. Use returned data (if any)
+    while($subject = mysqli_fetch_assoc($subject_set)) {
+  ?>
+    <?php
+      echo "<li";
+      if ($subject["id"] == $selected_subject_id ) {
+        echo " class=\"selected\"";
+      }
+      echo ">";
+    ?>
+      <a href="manage_content.php?subject=<?php echo urlencode($subject["id"]); ?>" class=""><?php echo $subject["menu_name"]; ?></a>
+      <?php $page_set = find_pages_for_subject($subject["id"]); ?>
+      <ul class="pages">
+        <?php
+          // 3. Use returned data (if any)
+          while($page = mysqli_fetch_assoc($page_set)) {
+        ?>
+        <?php
+          echo "<li";
+          if ($page["id"] == $selected_page_id ) {
+            echo " class=\"selected\"";
+          }
+          echo ">";
+        ?>
+            <a href="manage_content.php?page=<?php echo urlencode($page["id"]); ?>" class=""><?php echo $page["menu_name"]; ?></a>
+          </li>
+        <?php
+          }
+        ?>
+        <?php mysqli_free_result($page_set); ?>
+      </ul>
+    </li>
+<?php
+  }
+?>
+<?php
+  // 4. Release returned data
+  mysqli_free_result($subject_set);
+?>
+</ul>
