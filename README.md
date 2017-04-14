@@ -31,3 +31,5 @@ To set up an environment you need to have:
 </ul>
 </li>
 </ul>
+
+![Screenshot](/a.png?raw=true "screenshot")
